@@ -5,8 +5,11 @@ const ulEl = document.getElementById("ul-el")
 
 
 let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
-
-console.log(leadsFromLocalStorage)
+//when the if statement is formatted like this it means that it is checking if it is truthy
+if (leadsFromLocalStorage) {
+  myLeads = leadsFromLocalStorage
+  renderLeads()
+}
 
 button.addEventListener("click", function() {
   myLeads.push(inputEl.value)

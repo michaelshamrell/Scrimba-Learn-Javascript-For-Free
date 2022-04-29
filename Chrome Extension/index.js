@@ -9,7 +9,7 @@ button.addEventListener("click", function() {
   myLeads.push(inputEl.value)
   console.log(myLeads)
 })
-
+zxcv
 for (let i = 0; i < myLeads.length; i++) {
   ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
 }

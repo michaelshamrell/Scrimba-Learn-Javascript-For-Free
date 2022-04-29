@@ -3,12 +3,17 @@ const button = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
+const tabBtn = document.getElementById("tab-btn")
 const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
 //when the if statement is formatted like this it means that it is checking if it is truthy
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage
   render(myLeads)
 }
+
+const tabs = [
+  {url: "https://www.linkedin.com/in/per-harald-borgen/"}
+]
 
 button.addEventListener("click", function() {
   myLeads.push(inputEl.value)
@@ -20,6 +25,9 @@ deleteBtn.addEventListener("dblclick", function() {
   localStorage.clear()
   myLeads = []
   render(myLeads)
+})
+tabBtn.addEventListener("click", function() {
+console.log(tabs[0].url)
 })
 
 function render(leads) {

@@ -2,20 +2,22 @@ let myLeads = []
 const button = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
-// const input = document.querySelector("input-el").value;
-//Const cannot be reassigned. Const-constant. Whatever you assign it to should be constant.
+
+
+let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
+
+console.log(leadsFromLocalStorage)
 
 button.addEventListener("click", function() {
   myLeads.push(inputEl.value)
   inputEl.value = ""
+  localStorage.setItem("myLeads", JSON.stringify(myLeads) )
   renderLeads()
 })
-
 
 function renderLeads() {
     let listItems = ""
     for (let i = 0; i < myLeads.length; i++) {
-      // listItems += "<li><a target='_blank' href=' " + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
       listItems += 
       `<li>
           <a target='_blank' href='${myLeads[i]}'>

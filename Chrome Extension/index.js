@@ -7,28 +7,28 @@ const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
 //when the if statement is formatted like this it means that it is checking if it is truthy
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage
-  renderLeads()
+  render(myLeads)
 }
 
 button.addEventListener("click", function() {
   myLeads.push(inputEl.value)
   inputEl.value = ""
   localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-  renderLeads()
+  render(myLeads)
 })
 deleteBtn.addEventListener("dblclick", function() {
   localStorage.clear()
   myLeads = []
-  renderLeads()
+  render(myLeads)
 })
 
-function renderLeads() {
+function render(leads) {
     let listItems = ""
-    for (let i = 0; i < myLeads.length; i++) {
+    for (let i = 0; i < leads.length; i++) {
       listItems += 
       `<li>
-          <a target='_blank' href='${myLeads[i]}'>
-              ${myLeads[i]}
+          <a target='_blank' href='${leads[i]}'>
+              ${leads[i]}
           </a>
        </li>`
 

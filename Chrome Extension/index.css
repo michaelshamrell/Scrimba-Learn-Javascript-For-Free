@@ -13,12 +13,15 @@ input {
   margin-bottom: 4px;
 
 }
-
+#delete-btn {
+  background-color: white;
+  color: #5f9341;
+}
 button {
   color: whitesmoke;
   background-color: #5f9341;
   padding: 10px, 20px; 
-  border: none;
+  border: 1px solid #5f9341;
   font-weight: bold;
 }
 

@@ -1,12 +1,10 @@
 // template strings/literals
 
 const recipient = "James"
-
-// Refactor the email string to use template strings
-// const email = "Hey " + recipient + "! How is it going? Cheers Per"
-
+const sender = "Michael"
 const email = 
-`Hey ${recipient}! How is it going? Cheers
-`
+`Hey ${recipient}! 
 
+How is it going? Cheers ${sender}`
+//you can use spacing to create literal spacing inside of the console.log
 console.log(email)
